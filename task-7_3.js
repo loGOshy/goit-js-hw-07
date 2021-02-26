@@ -30,7 +30,7 @@ const images = [
 
     return itemOfList;
   }
-  // console.log(itemConstructor('a', 's'));
+  // console.log(itemConstructor('1', '2'));
 
   const renderGallery = (images) => {
     const galleryItem = images.map((obj) => itemConstructor (obj.url, obj.alt));

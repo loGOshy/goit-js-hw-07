@@ -9,7 +9,7 @@ function valid() { inputRef.style.borderColor = '#4caf50' };
 function invalid() { inputRef.style.borderColor = '#f44336' };
 
 
-inputRef.addEventListener('change', e => {
+inputRef.addEventListener('blur', e => {
   inputRef.value.length !== numOfChars ?
     invalid():
     valid();

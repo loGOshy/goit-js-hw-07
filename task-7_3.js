@@ -15,26 +15,11 @@ const images = [
       alt: 'Group of Horses Running',
     },
   ];
-
-  const galleryRef = document.querySelector('#gallery');
   
-  const itemConstructor = (src, alt) => {
-    const itemOfList = document.createElement('li');
-    const imageElement = document.createElement('img');
+  const list = document.querySelector('#gallery');
 
-    imageElement.src = `${src}`;
-    imageElement.alt = `${alt}`;
-    imageElement.width = 500;
-
-    itemOfList.append(imageElement);
-
-    return itemOfList;
-  }
-  // console.log(itemConstructor('1', '2'));
-
-  const renderGallery = (images) => {
-    const galleryItem = images.map((obj) => itemConstructor (obj.url, obj.alt));
-    galleryRef.append(...galleryItem);
-  }
-
-  renderGallery(images);
+  const markup = images.reduce(
+    (akkString, img ) => akkString + `<li> <img src="${img.url}" alt="${img.alt}" width="500"/> </li>`,
+    "");
+  
+  list.insertAdjacentHTML('afterbegin', markup);

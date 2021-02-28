@@ -8,7 +8,7 @@ console.log(`В списке ${checkNumberOfCategories(categoriesRef)} кате�
 const listOfCategories = [...categoriesRef.children];
 
 
-const loger = (arr) => arr.map((item) => {
+const loger = (arr) => arr.forEach((item) => {
     const categoriesName = item.querySelector('h2');
     const numberOfItems = checkNumberOfCategories(categoriesName.nextElementSibling);
     console.log(`Категория: ${categoriesName.textContent}`);
